@@ -13,11 +13,11 @@ devolver pd.read_csv("resultados_clustering.csv")
 df = cargar_datos()
 
 Filtros por clúster
-cluster = st.selectbox("Selecciona un clúster:", sorted(df['Cluster'].unique()))
-df_filtrado = df[df['Clúster'] == clúster]
+cluster = st.selectbox("Selecciona un cluster:", sorted(df['Cluster'].unique()))
+df_filtrado = df[df['Cluster'] == clúster]
 
 Mostrar resumen
-st.subheader("Pacientes del Clúster Seleccionado")
+st.subheader("Pacientes del Cluster Seleccionado")
 st.write(f"Total de pacientes: {len(df_filtrado)}")
 st.dataframe(df_filtrado)
 
@@ -27,6 +27,6 @@ st.write(df_filtrado[['Edad', 'Días_internamiento']].describe())
 
 Visualización
 fig = px.scatter(df, x="Edad", y="Días_internamiento", color=df["Cluster"].astype(str),
-title="Distribución de pacientes por clúster",
-etiquetas={"color": "Clúster"})
+title="Distribución de pacientes por cluster",
+etiquetas={"color": "Cluster"})
 st.plotly_chart(fig, use_container_width=True)
