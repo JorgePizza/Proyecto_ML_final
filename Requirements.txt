@@ -1,3 +1,6 @@
 txt
 pandas
 plotly
+streamlit
+scikit-learn
+openpyxl
